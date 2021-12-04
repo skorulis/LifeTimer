@@ -12,9 +12,9 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \LifeActivity.timestamp, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var items: FetchedResults<LifeActivity>
 
     var body: some View {
         NavigationView {
@@ -44,7 +44,7 @@ struct ContentView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
+            let newItem = LifeActivity(context: viewContext)
             newItem.timestamp = Date()
 
             do {
@@ -81,8 +81,3 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}

@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21C5045a" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="LifeActivity" representedClassName="LifeActivity" syncable="YES" codeGenerationType="class">
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="660348900" usesScalarValueType="NO"/>
+        <relationship name="label" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LifeLabel" inverseName="activities" inverseEntity="LifeLabel"/>
+    </entity>
+    <entity name="LifeLabel" representedClassName="LifeLabel" syncable="YES" codeGenerationType="class">
+        <attribute name="label" attributeType="String" defaultValueString="Activity name"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LifeActivity" inverseName="label" inverseEntity="LifeActivity"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="LifeActivity" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="LifeLabel" positionX="-63" positionY="0" width="128" height="59"/>
     </elements>
 </model>

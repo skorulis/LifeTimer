@@ -13,6 +13,13 @@
 		FAA0F1B6275C1CC6006F8179 /* LifeTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1AE275C1CC6006F8179 /* LifeTimerApp.swift */; };
 		FAA0F1B7275C1CC6006F8179 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1AF275C1CC6006F8179 /* ContentView.swift */; };
 		FAA0F1B8275C1CC6006F8179 /* LifeTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1B2275C1CC6006F8179 /* LifeTimer.xcdatamodeld */; };
+		FAA0F1BB275C1EFD006F8179 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1BA275C1EFD006F8179 /* DayView.swift */; };
+		FAA0F1BE275C1F45006F8179 /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1BD275C1F45006F8179 /* IOC.swift */; };
+		FAA0F1C1275C1F7F006F8179 /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = FAA0F1C0275C1F7F006F8179 /* SwinjectAutoregistration */; };
+		FAA0F1C5275C1F99006F8179 /* SingletonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1C2275C1F99006F8179 /* SingletonService.swift */; };
+		FAA0F1C6275C1F99006F8179 /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1C3275C1F99006F8179 /* ErrorService.swift */; };
+		FAA0F1C7275C1F99006F8179 /* GenericFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1C4275C1F99006F8179 /* GenericFactory.swift */; };
+		FAA0F1C9275C1FD1006F8179 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1C8275C1FD1006F8179 /* DayViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,12 @@
 		FAA0F1AE275C1CC6006F8179 /* LifeTimerApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeTimerApp.swift; sourceTree = "<group>"; };
 		FAA0F1AF275C1CC6006F8179 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FAA0F1B3275C1CC6006F8179 /* LifeTimer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeTimer.xcdatamodel; sourceTree = "<group>"; };
+		FAA0F1BA275C1EFD006F8179 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		FAA0F1BD275C1F45006F8179 /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
+		FAA0F1C2275C1F99006F8179 /* SingletonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonService.swift; sourceTree = "<group>"; };
+		FAA0F1C3275C1F99006F8179 /* ErrorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
+		FAA0F1C4275C1F99006F8179 /* GenericFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFactory.swift; sourceTree = "<group>"; };
+		FAA0F1C8275C1FD1006F8179 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA0F1C1275C1F7F006F8179 /* SwinjectAutoregistration in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA0F1A7275C1CC6006F8179 /* Database */,
+				FAA0F1BC275C1F0A006F8179 /* Root */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -118,6 +133,7 @@
 		FAA0F1AC275C1CC6006F8179 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FAA0F1B9275C1EF6006F8179 /* Day */,
 				FAA0F1AD275C1CC6006F8179 /* Root */,
 			);
 			path = Scene;
@@ -148,6 +164,26 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		FAA0F1B9275C1EF6006F8179 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				FAA0F1BA275C1EFD006F8179 /* DayView.swift */,
+				FAA0F1C8275C1FD1006F8179 /* DayViewModel.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		FAA0F1BC275C1F0A006F8179 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				FAA0F1C3275C1F99006F8179 /* ErrorService.swift */,
+				FAA0F1C4275C1F99006F8179 /* GenericFactory.swift */,
+				FAA0F1C2275C1F99006F8179 /* SingletonService.swift */,
+				FAA0F1BD275C1F45006F8179 /* IOC.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,6 +200,9 @@
 			dependencies = (
 			);
 			name = LifeTimer;
+			packageProductDependencies = (
+				FAA0F1C0275C1F7F006F8179 /* SwinjectAutoregistration */,
+			);
 			productName = LifeTimer;
 			productReference = FAA0F174275C1BC1006F8179 /* LifeTimer.app */;
 			productType = "com.apple.product-type.application";
@@ -214,6 +253,9 @@
 				Base,
 			);
 			mainGroup = FAA0F16B275C1BC1006F8179;
+			packageReferences = (
+				FAA0F1BF275C1F7F006F8179 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
+			);
 			productRefGroup = FAA0F175275C1BC1006F8179 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -247,8 +289,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA0F1C6275C1F99006F8179 /* ErrorService.swift in Sources */,
 				FAA0F1B4275C1CC6006F8179 /* Persistence.swift in Sources */,
+				FAA0F1C5275C1F99006F8179 /* SingletonService.swift in Sources */,
+				FAA0F1C7275C1F99006F8179 /* GenericFactory.swift in Sources */,
+				FAA0F1BE275C1F45006F8179 /* IOC.swift in Sources */,
+				FAA0F1BB275C1EFD006F8179 /* DayView.swift in Sources */,
 				FAA0F1B6275C1CC6006F8179 /* LifeTimerApp.swift in Sources */,
+				FAA0F1C9275C1FD1006F8179 /* DayViewModel.swift in Sources */,
 				FAA0F1B7275C1CC6006F8179 /* ContentView.swift in Sources */,
 				FAA0F1B8275C1CC6006F8179 /* LifeTimer.xcdatamodeld in Sources */,
 			);
@@ -526,6 +574,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAA0F1BF275C1F7F006F8179 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/SwinjectAutoregistration";
+			requirement = {
+				kind = exactVersion;
+				version = 2.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAA0F1C0275C1F7F006F8179 /* SwinjectAutoregistration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAA0F1BF275C1F7F006F8179 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
+			productName = SwinjectAutoregistration;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FAA0F1B2275C1CC6006F8179 /* LifeTimer.xcdatamodeld */ = {
