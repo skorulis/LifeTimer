@@ -16,6 +16,12 @@ struct LabelListView {
     @StateObject var viewModel: LabelListViewModel
     @EnvironmentObject var factory: GenericFactory
     
+    @FetchRequest(
+        entity: LifeLabel.entity(),
+        sortDescriptors: []
+    )
+    var labels: FetchedResults<LifeLabel>
+    
 }
 
 // MARK: - Rendering
@@ -24,16 +30,25 @@ extension LabelListView: View {
     
     var body: some View {
         NavigationView {
-            list
+            mainContent
                 .navigationTitle(Text("Labels"))
                 .navigationBarItems(trailing: addButton)
         }
     }
     
+    private var mainContent: some View {
+        ZStack {
+            list
+            navigation
+        }
+    }
+    
     private var list: some View {
         List {
-            navigation
-            Text("Hello")
+            ForEach(labels) { label in
+                cell(label)
+            }
+            .onDelete(perform: delete(at:))
         }
     }
     
@@ -48,6 +63,28 @@ extension LabelListView: View {
             LabelEditView(viewModel: factory.resolve(LabelEditViewModel.self, argument: label))
         }
     }
+    
+    private func cell(_ label: LifeLabel) -> some View {
+        Button(action: {viewModel.selectedLabel = label}) {
+            Text("\(label.name ?? "")")
+        }
+    }
+    
+    
+}
+
+// MARK: - Behaviors
+
+private extension LabelListView {
+    
+    func delete(at offsets: IndexSet) {
+        for index in offsets {
+            let label = labels[index]
+            label.managedObjectContext?.delete(label)
+        }
+        try! viewModel.db.container.viewContext.save()
+    }
+    
 }
 
 // MARK: - Previews

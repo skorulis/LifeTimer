@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import ASSwiftUI
 
 // MARK: - Memory footprint
 
 struct LabelEditView {
     
     @StateObject var viewModel: LabelEditViewModel
+    @Environment(\.as_presentation) var as_presentation
     
 }
 
@@ -37,9 +39,19 @@ extension LabelEditView: View {
     }
     
     private var saveButton: some View {
-        Button(action: viewModel.save) {
+        Button(action: save) {
             Text("Save")
         }
+    }
+}
+
+// MARK: - Behaviors
+
+private extension LabelEditView {
+    
+    func save() {
+        viewModel.save()
+        self.as_presentation.dismiss()
     }
 }
 

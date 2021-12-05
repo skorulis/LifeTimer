@@ -14,6 +14,11 @@ struct LifeTimerApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(IOC.shared.container.resolve(GenericFactory.self)!)
+                .environment(\.managedObjectContext, persistence.container.viewContext)
         }
+    }
+    
+    private var persistence: PersistenceService {
+        return IOC.shared.resolve(PersistenceService.self)!
     }
 }

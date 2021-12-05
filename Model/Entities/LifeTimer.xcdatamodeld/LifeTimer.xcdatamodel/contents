@@ -6,7 +6,7 @@
         <relationship name="label" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LifeLabel" inverseName="activities" inverseEntity="LifeLabel"/>
     </entity>
     <entity name="LifeLabel" representedClassName="LifeLabel" syncable="YES" codeGenerationType="class">
-        <attribute name="label" attributeType="String" defaultValueString="Activity name"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
         <relationship name="activities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LifeActivity" inverseName="label" inverseEntity="LifeActivity"/>
     </entity>
     <elements>
