@@ -52,11 +52,11 @@ public final class IOC {
     }
     
     private func setupServices() {
-    
+        container.autoregister(ErrorService.self, initializer: ErrorService.init)
     }
     
     private func setupViewModels() {
-        
+        container.autoregister(DayViewModel.self, initializer: DayViewModel.init)
     }
     
     func resolve<ServiceType>(_ type: ServiceType.Type) -> ServiceType? {
