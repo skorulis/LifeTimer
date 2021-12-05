@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21C5045a" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="LifeActivity" representedClassName="LifeActivity" syncable="YES" codeGenerationType="class">
         <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="660348900" usesScalarValueType="NO"/>
+        <attribute name="startTime" attributeType="Date" defaultDateTimeInterval="660348900" usesScalarValueType="NO"/>
         <relationship name="label" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LifeLabel" inverseName="activities" inverseEntity="LifeLabel"/>
     </entity>
     <entity name="LifeLabel" representedClassName="LifeLabel" syncable="YES" codeGenerationType="class">

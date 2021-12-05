@@ -57,6 +57,8 @@ public final class IOC {
     
     private func setupViewModels() {
         container.autoregister(DayViewModel.self, initializer: DayViewModel.init)
+        container.autoregister(LabelListViewModel.self, initializer: LabelListViewModel.init)
+        
     }
     
     func resolve<ServiceType>(_ type: ServiceType.Type) -> ServiceType? {
