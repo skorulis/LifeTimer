@@ -58,6 +58,8 @@ public final class IOC {
         container.autoregister(DayViewModel.self, initializer: DayViewModel.init)
         container.autoregister(LabelListViewModel.self, initializer: LabelListViewModel.init)
         container.autoregister(LabelEditViewModel.self, argument: LifeLabel.self, initializer: LabelEditViewModel.init)
+        
+        container.autoregister(ActivityViewModel.self, initializer: ActivityViewModel.init)
     }
     
     func resolve<ServiceType>(_ type: ServiceType.Type) -> ServiceType? {

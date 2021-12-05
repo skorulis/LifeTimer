@@ -10,16 +10,16 @@ import SwiftUI
 
 final class LabelEditViewModel: ObservableObject {
     
-    var original: LifeLabel
+    var label: LifeLabel
     private let db: PersistenceService
     
-    @Published var label: String
+    @Published var name: String
     @Published var color = Color.red
     
     init(label: LifeLabel, db: PersistenceService) {
-        self.original = label
+        self.label = label
         self.db = db
-        self.label = label.label ?? ""
+        self.name = label.name ?? ""
     }
 }
 
@@ -28,8 +28,8 @@ final class LabelEditViewModel: ObservableObject {
 extension LabelEditViewModel {
     
     func save() {
-        self.original.label = self.label
-        try! self.original.managedObjectContext?.save()
+        self.label.name = self.name
+        try! label.managedObjectContext?.save()
     }
     
 }

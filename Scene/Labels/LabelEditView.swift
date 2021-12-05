@@ -35,7 +35,7 @@ extension LabelEditView: View {
     }
     
     private var nameField: some View {
-        TextField("Label", text: $viewModel.label)
+        TextField("Label", text: $viewModel.name)
     }
     
     private var saveButton: some View {

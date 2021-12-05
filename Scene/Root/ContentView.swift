@@ -20,6 +20,11 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
+            ActivityView(viewModel: factory.resolve())
+                .tabItem {
+                    Label("Activities", systemImage: "play.fill")
+                }
+            
             LabelListView(viewModel: factory.resolve())
                 .tabItem {
                     Label("Labels", systemImage: "character.cursor.ibeam")

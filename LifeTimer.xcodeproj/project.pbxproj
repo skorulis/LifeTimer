@@ -26,6 +26,10 @@
 		FABAC60B275C47F2008177A7 /* LabelEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC60A275C47F2008177A7 /* LabelEditView.swift */; };
 		FABAC60D275C4805008177A7 /* LabelEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC60C275C4805008177A7 /* LabelEditViewModel.swift */; };
 		FABAC615275C6448008177A7 /* ASSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FABAC614275C6448008177A7 /* ASSwiftUI */; };
+		FABAC619275C6C6E008177A7 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC618275C6C6E008177A7 /* ActivityView.swift */; };
+		FABAC61B275C6C80008177A7 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC61A275C6C80008177A7 /* ActivityViewModel.swift */; };
+		FABAC61D275C6DCB008177A7 /* ActivityEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC61C275C6DCB008177A7 /* ActivityEditView.swift */; };
+		FABAC61F275C6DEA008177A7 /* ActivityEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC61E275C6DEA008177A7 /* ActivityEditViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		FABAC60A275C47F2008177A7 /* LabelEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelEditView.swift; sourceTree = "<group>"; };
 		FABAC60C275C4805008177A7 /* LabelEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelEditViewModel.swift; sourceTree = "<group>"; };
 		FABAC613275C6345008177A7 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ASSwiftUI; sourceTree = "<group>"; };
+		FABAC618275C6C6E008177A7 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		FABAC61A275C6C80008177A7 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
+		FABAC61C275C6DCB008177A7 /* ActivityEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEditView.swift; sourceTree = "<group>"; };
+		FABAC61E275C6DEA008177A7 /* ActivityEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEditViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +155,7 @@
 		FAA0F1AC275C1CC6006F8179 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FABAC617275C6C62008177A7 /* Activity */,
 				FAA0F1B9275C1EF6006F8179 /* Day */,
 				FABAC605275C43F4008177A7 /* Labels */,
 				FAA0F1AD275C1CC6006F8179 /* Root */,
@@ -216,6 +225,17 @@
 				FABAC613275C6345008177A7 /* ASSwiftUI */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		FABAC617275C6C62008177A7 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				FABAC618275C6C6E008177A7 /* ActivityView.swift */,
+				FABAC61A275C6C80008177A7 /* ActivityViewModel.swift */,
+				FABAC61C275C6DCB008177A7 /* ActivityEditView.swift */,
+				FABAC61E275C6DEA008177A7 /* ActivityEditViewModel.swift */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,15 +347,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA0F1C6275C1F99006F8179 /* ErrorService.swift in Sources */,
+				FABAC61D275C6DCB008177A7 /* ActivityEditView.swift in Sources */,
 				FAA0F1B4275C1CC6006F8179 /* PersistenceService.swift in Sources */,
 				FAA0F1C5275C1F99006F8179 /* SingletonService.swift in Sources */,
 				FABAC60D275C4805008177A7 /* LabelEditViewModel.swift in Sources */,
+				FABAC61F275C6DEA008177A7 /* ActivityEditViewModel.swift in Sources */,
 				FABAC607275C43FC008177A7 /* LabelListView.swift in Sources */,
 				FAA0F1C7275C1F99006F8179 /* GenericFactory.swift in Sources */,
 				FAA0F1BE275C1F45006F8179 /* IOC.swift in Sources */,
 				FAA0F1BB275C1EFD006F8179 /* DayView.swift in Sources */,
+				FABAC619275C6C6E008177A7 /* ActivityView.swift in Sources */,
 				FABAC60B275C47F2008177A7 /* LabelEditView.swift in Sources */,
 				FAA0F1B6275C1CC6006F8179 /* LifeTimerApp.swift in Sources */,
+				FABAC61B275C6C80008177A7 /* ActivityViewModel.swift in Sources */,
 				FAA0F1C9275C1FD1006F8179 /* DayViewModel.swift in Sources */,
 				FAA0F1B7275C1CC6006F8179 /* ContentView.swift in Sources */,
 				FAA0F1B8275C1CC6006F8179 /* LifeTimer.xcdatamodeld in Sources */,
