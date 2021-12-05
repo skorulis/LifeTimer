@@ -9,10 +9,24 @@ import Foundation
 
 final class LabelListViewModel: ObservableObject {
     
+    @Published var selectedLabel: LifeLabel?
+    private let db: PersistenceService
+    
+    init(db: PersistenceService) {
+        self.db = db
+    }
     
     
-    init() {
-        
+}
+
+// MARK: - Behaviors
+
+extension LabelListViewModel {
+
+    func newLabel() {
+        selectedLabel = LifeLabel(context: db.container.viewContext)
     }
     
 }
+
+

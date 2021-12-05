@@ -38,13 +38,12 @@ public final class IOC {
     
     private func setupAccess() {
         if testing {
-            container.autoregister(PersistenceController.self, initializer: PersistenceController.previews)
+            container.autoregister(PersistenceService.self, initializer: PersistenceService.previews)
                 .inObjectScope(.container)
         } else {
-            container.autoregister(PersistenceController.self, initializer: PersistenceController.database)
+            container.autoregister(PersistenceService.self, initializer: PersistenceService.database)
                 .inObjectScope(.container)
         }
-        
     }
     
     private func setupCoordinators() {
@@ -58,7 +57,7 @@ public final class IOC {
     private func setupViewModels() {
         container.autoregister(DayViewModel.self, initializer: DayViewModel.init)
         container.autoregister(LabelListViewModel.self, initializer: LabelListViewModel.init)
-        
+        container.autoregister(LabelEditViewModel.self, argument: LifeLabel.self, initializer: LabelEditViewModel.init)
     }
     
     func resolve<ServiceType>(_ type: ServiceType.Type) -> ServiceType? {

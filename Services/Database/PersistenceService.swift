@@ -1,5 +1,5 @@
 //
-//  Persistence.swift
+//  PersistenceService.swift
 //  LifeTimer
 //
 //  Created by Alexander Skorulis on 5/12/2021.
@@ -7,16 +7,16 @@
 
 import CoreData
 
-struct PersistenceController {
+struct PersistenceService {
 
     let container: NSPersistentCloudKitContainer
     
-    static func previews() -> PersistenceController {
+    static func previews() -> PersistenceService {
         let p = self.init(inMemory: true)
         return p
     }
     
-    static func database() -> PersistenceController {
+    static func database() -> PersistenceService {
         let p = self.init(inMemory: false)
         return p
     }

@@ -7,12 +7,14 @@
 
 import Foundation
 import SwiftUI
+import ASSwiftUI
 
 // MARK: - Memory footprint
 
 struct LabelListView {
     
     @StateObject var viewModel: LabelListViewModel
+    @EnvironmentObject var factory: GenericFactory
     
 }
 
@@ -30,13 +32,20 @@ extension LabelListView: View {
     
     private var list: some View {
         List {
+            navigation
             Text("Hello")
         }
     }
     
     private var addButton: some View {
-        Button(action: {}) {
+        Button(action: viewModel.newLabel) {
             Image(systemName: "plus.circle")
+        }
+    }
+    
+    private var navigation: some View {
+        NavigationHelper.invisible(selection: $viewModel.selectedLabel) { label in
+            LabelEditView(viewModel: factory.resolve(LabelEditViewModel.self, argument: label))
         }
     }
 }
