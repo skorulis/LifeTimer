@@ -43,4 +43,8 @@ struct PersistenceService {
             }
         })
     }
+    
+    var mainContext: NSManagedObjectContext {
+        return container.viewContext
+    }
 }

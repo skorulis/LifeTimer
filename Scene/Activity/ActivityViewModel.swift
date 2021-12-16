@@ -9,7 +9,24 @@ import Foundation
 
 final class ActivityViewModel: ObservableObject {
     
-    init() {
-        
+    @Published var selected: LifeActivity?
+    
+    let db: PersistenceService
+    
+    init(db: PersistenceService) {
+        self.db = db
     }
+}
+
+// MARK: - Behaviors
+
+extension ActivityViewModel {
+    
+    func addActivity() {
+        let activity = LifeActivity(context: db.mainContext)
+        activity.startTime = Date()
+        
+        selected = activity
+    }
+    
 }

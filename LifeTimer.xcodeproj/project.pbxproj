@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA2768742761F4F200FDDA59 /* ContextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2768732761F4F200FDDA59 /* ContextObject.swift */; };
 		FAA0F18E275C1BC3006F8179 /* LifeTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F18D275C1BC3006F8179 /* LifeTimerTests.swift */; };
 		FAA0F1B4275C1CC6006F8179 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1A8275C1CC6006F8179 /* PersistenceService.swift */; };
 		FAA0F1B5275C1CC6006F8179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA0F1AB275C1CC6006F8179 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA2768732761F4F200FDDA59 /* ContextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextObject.swift; sourceTree = "<group>"; };
 		FAA0F174275C1BC1006F8179 /* LifeTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA0F189275C1BC3006F8179 /* LifeTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA0F18D275C1BC3006F8179 /* LifeTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTimerTests.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		FAA0F1A9275C1CC6006F8179 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				FA2768732761F4F200FDDA59 /* ContextObject.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				FAA0F1B4275C1CC6006F8179 /* PersistenceService.swift in Sources */,
 				FAA0F1C5275C1F99006F8179 /* SingletonService.swift in Sources */,
 				FABAC60D275C4805008177A7 /* LabelEditViewModel.swift in Sources */,
+				FA2768742761F4F200FDDA59 /* ContextObject.swift in Sources */,
 				FABAC61F275C6DEA008177A7 /* ActivityEditViewModel.swift in Sources */,
 				FABAC607275C43FC008177A7 /* LabelListView.swift in Sources */,
 				FAA0F1C7275C1F99006F8179 /* GenericFactory.swift in Sources */,

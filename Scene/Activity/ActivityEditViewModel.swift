@@ -11,8 +11,12 @@ final class ActivityEditViewModel: ObservableObject {
     
     private let activity: LifeActivity
     
+    @Published var startTime: Date
+    
     init(activity: LifeActivity) {
         self.activity = activity
+        
+        startTime = activity.startTime!
     }
     
 }

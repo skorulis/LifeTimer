@@ -11,6 +11,7 @@ import SwiftUI
 
 struct ActivityEditView {
     
+    @StateObject var viewModel: ActivityEditViewModel
 }
 
 // MARK: - Rendering
@@ -18,7 +19,15 @@ struct ActivityEditView {
 extension ActivityEditView: View {
     
     var body: some View {
-        EmptyView()
+        ScrollView {
+            VStack {
+                DatePicker("Start time", selection: $viewModel.startTime, displayedComponents: [.date, .hourAndMinute])
+                
+                
+            }
+            
+        }
+        .navigationTitle("Activity")
     }
 }
 
@@ -27,7 +36,9 @@ extension ActivityEditView: View {
 struct ActivityEditView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ActivityEditView()
+        let ioc = IOC(testing: true)
+        let viewModel = ioc.resolve(ActivityEditViewModel.self)!
+        ActivityEditView(viewModel: viewModel)
     }
 }
 

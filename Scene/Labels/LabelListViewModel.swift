@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import CoreData
 
 final class LabelListViewModel: ObservableObject {
     
-    @Published var selectedLabel: LifeLabel?
+    @Published var selectedLabel: ContextObject<LifeLabel>?
     let db: PersistenceService
     
     init(db: PersistenceService) {
@@ -24,7 +25,10 @@ final class LabelListViewModel: ObservableObject {
 extension LabelListViewModel {
 
     func newLabel() {
-        selectedLabel = LifeLabel(context: db.container.viewContext)
+        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        context.parent = db.mainContext
+        let label = LifeLabel(context: context)
+        selectedLabel = ContextObject(obj: label)
     }
 
 }

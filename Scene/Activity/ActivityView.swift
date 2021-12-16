@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ASSwiftUI
 
 // MARK: - Memory footprint
 
@@ -21,7 +22,34 @@ struct ActivityView {
 extension ActivityView: View {
     
     var body: some View {
-        DayView(viewModel: factory.resolve())
+        NavigationView {
+            ZStack {
+                DayView(viewModel: factory.resolve())
+                controls
+                navigation
+            }
+        }
+        
+    }
+    
+    private var controls: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                Button(action: viewModel.addActivity) {
+                    Image(systemName: "plus.circle")
+                        .frame(width: 44, height: 44)
+                }
+            }
+            .padding()
+        }
+    }
+    
+    private var navigation: some View {
+        NavigationHelper.invisible(selection: $viewModel.selected) { activity in
+            ActivityEditView(viewModel: factory.resolve(ActivityEditViewModel.self, argument: activity))
+        }
     }
 }
 
@@ -30,7 +58,8 @@ extension ActivityView: View {
 struct ActivityView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ActivityView(viewModel: IOC(testing: true).resolve(ActivityViewModel.self)!)
+        let ioc = IOC(testing: true)
+        ActivityView(viewModel: ioc.resolve(ActivityViewModel.self)!)
     }
 }
 
