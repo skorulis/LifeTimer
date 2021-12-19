@@ -23,7 +23,14 @@ extension ActivityEditView: View {
             VStack {
                 DatePicker("Start time", selection: $viewModel.startTime, displayedComponents: [.date, .hourAndMinute])
                 
-                
+                Picker("Label", selection: $viewModel.selectedLabel) {
+                    ForEach(viewModel.labels) { label in
+                        LabelView(label: label)
+                            .tag(label)
+                    }
+                }
+                .pickerStyle(.wheel)
+
             }
             .padding(.horizontal, 16)
         }

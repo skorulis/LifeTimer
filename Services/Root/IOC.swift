@@ -61,7 +61,7 @@ public final class IOC {
         container.autoregister(LabelEditViewModel.self, argument: ContextObject<LifeLabel>.self, initializer: LabelEditViewModel.init)
         
         container.autoregister(ActivityViewModel.self, initializer: ActivityViewModel.init)
-        container.autoregister(ActivityEditViewModel.self, argument: LifeActivity.self, initializer: ActivityEditViewModel.init)
+        container.autoregister(ActivityEditViewModel.self, argument: ContextObject<LifeActivity>.self, initializer: ActivityEditViewModel.init)
     }
     
     func resolve<ServiceType>(_ type: ServiceType.Type) -> ServiceType? {

@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import CoreData
 
 final class ActivityViewModel: ObservableObject {
     
-    @Published var selected: LifeActivity?
+    @Published var selected: ContextObject<LifeActivity>?
     
     let db: PersistenceService
     
@@ -23,10 +24,11 @@ final class ActivityViewModel: ObservableObject {
 extension ActivityViewModel {
     
     func addActivity() {
-        let activity = LifeActivity(context: db.mainContext)
+        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        context.parent = db.mainContext
+        let activity = LifeActivity(context: context)
         activity.startTime = Date()
-        
-        selected = activity
+        selected = ContextObject(obj: activity)
     }
     
 }

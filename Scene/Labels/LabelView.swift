@@ -22,6 +22,7 @@ extension LabelView: View {
             label.color
                 .frame(width: 30, height: 30)
             Text("\(label.name)")
+            Spacer()
         }
     }
 }

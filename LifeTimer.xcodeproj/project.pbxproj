@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA2768742761F4F200FDDA59 /* ContextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2768732761F4F200FDDA59 /* ContextObject.swift */; };
 		FAA0F18E275C1BC3006F8179 /* LifeTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F18D275C1BC3006F8179 /* LifeTimerTests.swift */; };
 		FAA0F1B4275C1CC6006F8179 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1A8275C1CC6006F8179 /* PersistenceService.swift */; };
 		FAA0F1B5275C1CC6006F8179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA0F1AB275C1CC6006F8179 /* Assets.xcassets */; };
@@ -23,6 +22,8 @@
 		FAA0F1C9275C1FD1006F8179 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1C8275C1FD1006F8179 /* DayViewModel.swift */; };
 		FAA908A5276EB68B004FA46A /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA908A4276EB68B004FA46A /* LabelView.swift */; };
 		FAA908A7276EB7AD004FA46A /* LifeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA908A6276EB7AD004FA46A /* LifeLabel.swift */; };
+		FAA908AD276EBB17004FA46A /* FetchedResultsControllerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA908AB276EBB17004FA46A /* FetchedResultsControllerPublisher.swift */; };
+		FAA908AE276EBB17004FA46A /* ContextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA908AC276EBB17004FA46A /* ContextObject.swift */; };
 		FABAC604275C43CB008177A7 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = FABAC603275C43CB008177A7 /* ElegantCalendar */; };
 		FABAC607275C43FC008177A7 /* LabelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC606275C43FC008177A7 /* LabelListView.swift */; };
 		FABAC609275C440B008177A7 /* LabelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC608275C440B008177A7 /* LabelListViewModel.swift */; };
@@ -46,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA2768732761F4F200FDDA59 /* ContextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextObject.swift; sourceTree = "<group>"; };
 		FAA0F174275C1BC1006F8179 /* LifeTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA0F189275C1BC3006F8179 /* LifeTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA0F18D275C1BC3006F8179 /* LifeTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTimerTests.swift; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		FAA0F1C8275C1FD1006F8179 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		FAA908A4276EB68B004FA46A /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		FAA908A6276EB7AD004FA46A /* LifeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeLabel.swift; sourceTree = "<group>"; };
+		FAA908AB276EBB17004FA46A /* FetchedResultsControllerPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerPublisher.swift; sourceTree = "<group>"; };
+		FAA908AC276EBB17004FA46A /* ContextObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextObject.swift; sourceTree = "<group>"; };
 		FABAC606275C43FC008177A7 /* LabelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListView.swift; sourceTree = "<group>"; };
 		FABAC608275C440B008177A7 /* LabelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListViewModel.swift; sourceTree = "<group>"; };
 		FABAC60A275C47F2008177A7 /* LabelEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelEditView.swift; sourceTree = "<group>"; };
@@ -146,7 +148,7 @@
 		FAA0F1A9275C1CC6006F8179 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				FA2768732761F4F200FDDA59 /* ContextObject.swift */,
+				FAA908AA276EBB17004FA46A /* CoreData */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -214,6 +216,15 @@
 				FAA0F1BD275C1F45006F8179 /* IOC.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		FAA908AA276EBB17004FA46A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FAA908AB276EBB17004FA46A /* FetchedResultsControllerPublisher.swift */,
+				FAA908AC276EBB17004FA46A /* ContextObject.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		FABAC605275C43F4008177A7 /* Labels */ = {
@@ -356,11 +367,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA0F1C6275C1F99006F8179 /* ErrorService.swift in Sources */,
+				FAA908AD276EBB17004FA46A /* FetchedResultsControllerPublisher.swift in Sources */,
 				FABAC61D275C6DCB008177A7 /* ActivityEditView.swift in Sources */,
 				FAA0F1B4275C1CC6006F8179 /* PersistenceService.swift in Sources */,
 				FAA0F1C5275C1F99006F8179 /* SingletonService.swift in Sources */,
 				FABAC60D275C4805008177A7 /* LabelEditViewModel.swift in Sources */,
-				FA2768742761F4F200FDDA59 /* ContextObject.swift in Sources */,
 				FABAC61F275C6DEA008177A7 /* ActivityEditViewModel.swift in Sources */,
 				FABAC607275C43FC008177A7 /* LabelListView.swift in Sources */,
 				FAA0F1C7275C1F99006F8179 /* GenericFactory.swift in Sources */,
@@ -373,6 +384,7 @@
 				FAA0F1B6275C1CC6006F8179 /* LifeTimerApp.swift in Sources */,
 				FABAC61B275C6C80008177A7 /* ActivityViewModel.swift in Sources */,
 				FAA0F1C9275C1FD1006F8179 /* DayViewModel.swift in Sources */,
+				FAA908AE276EBB17004FA46A /* ContextObject.swift in Sources */,
 				FAA0F1B7275C1CC6006F8179 /* ContentView.swift in Sources */,
 				FAA0F1B8275C1CC6006F8179 /* LifeTimer.xcdatamodeld in Sources */,
 				FABAC609275C440B008177A7 /* LabelListViewModel.swift in Sources */,
