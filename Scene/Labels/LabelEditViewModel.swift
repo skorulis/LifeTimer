@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import CoreData
+import ASSwiftUI
 
 final class LabelEditViewModel: ObservableObject {
     
@@ -19,6 +20,7 @@ final class LabelEditViewModel: ObservableObject {
     
     init(label: ContextObject<LifeLabel>) {
         self.label = label.obj
+        self.color = Color(label.obj.color ?? "") ?? Color.red
         self.context = label.context
         self.name = label.obj.name ?? ""
     }
@@ -30,6 +32,7 @@ extension LabelEditViewModel {
     
     func save() {
         label.name = self.name
+        label.color = self.color.hexString
         
         try! label.managedObjectContext?.save()
         try! label.managedObjectContext?.parent?.save()
