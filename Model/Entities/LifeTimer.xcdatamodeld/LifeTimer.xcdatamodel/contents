@@ -5,8 +5,8 @@
         <attribute name="startTime" attributeType="Date" defaultDateTimeInterval="660348900" usesScalarValueType="NO"/>
         <relationship name="label" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LifeLabel" inverseName="activities" inverseEntity="LifeLabel"/>
     </entity>
-    <entity name="LifeLabel" representedClassName="LifeLabel" syncable="YES" codeGenerationType="class">
-        <attribute name="color" attributeType="String" defaultValueString="#FF0000"/>
+    <entity name="LifeLabel" representedClassName="LifeLabel" syncable="YES">
+        <attribute name="colorString" attributeType="String" defaultValueString="#FF0000"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <relationship name="activities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LifeActivity" inverseName="label" inverseEntity="LifeActivity"/>
     </entity>

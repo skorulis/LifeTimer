@@ -25,7 +25,7 @@ extension ActivityEditView: View {
                 
                 
             }
-            
+            .padding(.horizontal, 16)
         }
         .navigationTitle("Activity")
     }

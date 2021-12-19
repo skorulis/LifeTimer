@@ -20,9 +20,9 @@ final class LabelEditViewModel: ObservableObject {
     
     init(label: ContextObject<LifeLabel>) {
         self.label = label.obj
-        self.color = Color(label.obj.color ?? "") ?? Color.red
+        self.color = label.obj.color
         self.context = label.context
-        self.name = label.obj.name ?? ""
+        self.name = label.obj.name
     }
 }
 
@@ -32,7 +32,7 @@ extension LabelEditViewModel {
     
     func save() {
         label.name = self.name
-        label.color = self.color.hexString
+        label.color = self.color
         
         try! label.managedObjectContext?.save()
         try! label.managedObjectContext?.parent?.save()

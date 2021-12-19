@@ -66,10 +66,9 @@ extension LabelListView: View {
     
     private func cell(_ label: LifeLabel) -> some View {
         Button(action: {viewModel.selectedLabel = ContextObject(obj: label)}) {
-            Text("\(label.name ?? "")")
+            LabelView(label: label)
         }
     }
-    
     
 }
 

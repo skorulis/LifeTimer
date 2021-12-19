@@ -21,6 +21,8 @@
 		FAA0F1C6275C1F99006F8179 /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1C3275C1F99006F8179 /* ErrorService.swift */; };
 		FAA0F1C7275C1F99006F8179 /* GenericFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1C4275C1F99006F8179 /* GenericFactory.swift */; };
 		FAA0F1C9275C1FD1006F8179 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1C8275C1FD1006F8179 /* DayViewModel.swift */; };
+		FAA908A5276EB68B004FA46A /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA908A4276EB68B004FA46A /* LabelView.swift */; };
+		FAA908A7276EB7AD004FA46A /* LifeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA908A6276EB7AD004FA46A /* LifeLabel.swift */; };
 		FABAC604275C43CB008177A7 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = FABAC603275C43CB008177A7 /* ElegantCalendar */; };
 		FABAC607275C43FC008177A7 /* LabelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC606275C43FC008177A7 /* LabelListView.swift */; };
 		FABAC609275C440B008177A7 /* LabelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC608275C440B008177A7 /* LabelListViewModel.swift */; };
@@ -59,6 +61,8 @@
 		FAA0F1C3275C1F99006F8179 /* ErrorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
 		FAA0F1C4275C1F99006F8179 /* GenericFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFactory.swift; sourceTree = "<group>"; };
 		FAA0F1C8275C1FD1006F8179 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
+		FAA908A4276EB68B004FA46A /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		FAA908A6276EB7AD004FA46A /* LifeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeLabel.swift; sourceTree = "<group>"; };
 		FABAC606275C43FC008177A7 /* LabelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListView.swift; sourceTree = "<group>"; };
 		FABAC608275C440B008177A7 /* LabelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListViewModel.swift; sourceTree = "<group>"; };
 		FABAC60A275C47F2008177A7 /* LabelEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelEditView.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA0F1B2275C1CC6006F8179 /* LifeTimer.xcdatamodeld */,
+				FAA908A6276EB7AD004FA46A /* LifeLabel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				FABAC608275C440B008177A7 /* LabelListViewModel.swift */,
 				FABAC60A275C47F2008177A7 /* LabelEditView.swift */,
 				FABAC60C275C4805008177A7 /* LabelEditViewModel.swift */,
+				FAA908A4276EB68B004FA46A /* LabelView.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -358,6 +364,8 @@
 				FABAC61F275C6DEA008177A7 /* ActivityEditViewModel.swift in Sources */,
 				FABAC607275C43FC008177A7 /* LabelListView.swift in Sources */,
 				FAA0F1C7275C1F99006F8179 /* GenericFactory.swift in Sources */,
+				FAA908A7276EB7AD004FA46A /* LifeLabel.swift in Sources */,
+				FAA908A5276EB68B004FA46A /* LabelView.swift in Sources */,
 				FAA0F1BE275C1F45006F8179 /* IOC.swift in Sources */,
 				FAA0F1BB275C1EFD006F8179 /* DayView.swift in Sources */,
 				FABAC619275C6C6E008177A7 /* ActivityView.swift in Sources */,
