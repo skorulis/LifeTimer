@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import ASSwiftUI
 
 // MARK: - Memory footprint
 
 struct ActivityEditView {
     
     @StateObject var viewModel: ActivityEditViewModel
+    @Environment(\.as_presentation) var as_presentation
 }
 
 // MARK: - Rendering
@@ -23,18 +25,39 @@ extension ActivityEditView: View {
             VStack {
                 DatePicker("Start time", selection: $viewModel.startTime, displayedComponents: [.date, .hourAndMinute])
                 
-                Picker("Label", selection: $viewModel.selectedLabel) {
-                    ForEach(viewModel.labels) { label in
-                        LabelView(label: label)
-                            .tag(label)
-                    }
-                }
-                .pickerStyle(.wheel)
-
+                picker
+                
+                saveButton
             }
             .padding(.horizontal, 16)
         }
         .navigationTitle("Activity")
+    }
+    
+    private var picker: some View {
+        DropdownPicker(
+            label: "Label",
+            selection: $viewModel.selectedLabel,
+            options: viewModel.labels
+        ) { item in
+            LabelView(label: item)
+        }
+    }
+    
+    private var saveButton: some View {
+        Button(action: save) {
+            Text("Save")
+        }
+    }
+}
+
+// MARK: - Behaviors
+
+private extension ActivityEditView {
+    
+    func save() {
+        viewModel.save()
+        as_presentation.dismiss()
     }
 }
 

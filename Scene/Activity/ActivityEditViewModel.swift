@@ -15,7 +15,7 @@ final class ActivityEditViewModel: ObservableObject {
     private let context: NSManagedObjectContext
     
     @Published var startTime: Date
-    @Published var selectedLabel: LifeLabel
+    @Published var selectedLabel: LifeLabel?
     
     @Published var labels: [LifeLabel] = []
     
@@ -27,7 +27,6 @@ final class ActivityEditViewModel: ObservableObject {
         self.context = activity.context
         
         startTime = self.activity.startTime!
-        selectedLabel = LifeLabel(context: self.context)
         
         let fetch = LifeLabel.fetch()
         fetch.sortDescriptors = [.init(key: "name", ascending: true)]
@@ -35,6 +34,22 @@ final class ActivityEditViewModel: ObservableObject {
         labelFetch.publisher
             .assign(to: &$labels)
         
+    }
+    
+}
+
+extension ActivityEditViewModel {
+    
+    func save() {
+        guard let label = selectedLabel else {
+            return // TODO: Handle errors
+        }
+        
+        activity.label = label
+        activity.startTime = startTime
+        
+        try! activity.managedObjectContext?.save()
+        try! activity.managedObjectContext?.parent?.save()
     }
     
 }

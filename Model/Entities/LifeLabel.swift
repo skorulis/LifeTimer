@@ -30,3 +30,9 @@ public class LifeLabel: NSManagedObject, Identifiable {
     }
     
 }
+
+extension LifeLabel: Titleable {
+    
+    public var title: String { name }
+    
+}
