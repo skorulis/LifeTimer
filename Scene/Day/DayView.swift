@@ -13,7 +13,7 @@ import SwiftUI
 struct DayView {
     
     @StateObject var viewModel: DayViewModel
-    
+       
 }
 
 // MARK: - Rendering
@@ -22,7 +22,10 @@ extension DayView: View {
     
     var body: some View {
         ScrollView {
-            hours
+            ZStack(alignment: .top) {
+                hours
+                activities
+            }
         }
     }
     
@@ -47,6 +50,48 @@ extension DayView: View {
         }
         .frame(height: 64)
     }
+    
+    private var activities: some View {
+        ForEach(viewModel.dailyActivities) { item in
+            activityItem(item)
+        }
+    }
+    
+    private func activityItem(_ item: LifeActivity) -> some View {
+        RoundedRectangle(cornerRadius: 8)
+            .fill(item.label.color.opacity(0.5))
+            .overlay(
+                Text(item.label.name)
+            )
+            .contentShape(Rectangle())
+            .onTapGesture {
+                viewModel.onSelection(item)
+            }
+            .frame(height: height(activity: item))
+            .offset(y: yDistance(time: item.startTime))
+            .padding(.leading, 60)
+            .padding(.trailing, 10)
+            
+    }
+}
+
+// MARK: - Logic
+
+private extension DayView {
+    
+    func height(activity: LifeActivity) -> CGFloat {
+        let endTime = activity.endTime ?? Date()
+        let height = yDistance(time: endTime) - yDistance(time: activity.startTime)
+        return max(height, 20)
+    }
+    
+    func yDistance(time: Date) -> CGFloat {
+        let secondPixels = CGFloat(64) / 3600
+        let seconds = time.timeIntervalSince1970 - viewModel.dayStart.timeIntervalSince1970
+        let pixels = CGFloat(seconds) * secondPixels
+        return max(pixels, 0)
+    }
+    
 }
 
 // MARK: - Previews

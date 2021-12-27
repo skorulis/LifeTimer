@@ -47,4 +47,10 @@ struct PersistenceService {
     var mainContext: NSManagedObjectContext {
         return container.viewContext
     }
+    
+    var childMainContext: NSManagedObjectContext {
+        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        context.parent = mainContext
+        return context
+    }
 }

@@ -34,7 +34,7 @@ public final class IOC {
     }
     
     private func setupProcessors() {
-        
+        container.autoregister(ActivityProcessor.self, initializer: ActivityProcessor.init)
     }
     
     private func setupAccess() {
@@ -56,7 +56,7 @@ public final class IOC {
     }
     
     private func setupViewModels() {
-        container.autoregister(DayViewModel.self, initializer: DayViewModel.init)
+        container.autoregister(DayViewModel.self, argument: DayViewModel.SelectionType.self, initializer: DayViewModel.init)
         container.autoregister(LabelListViewModel.self, initializer: LabelListViewModel.init)
         container.autoregister(LabelEditViewModel.self, argument: ContextObject<LifeLabel>.self, initializer: LabelEditViewModel.init)
         

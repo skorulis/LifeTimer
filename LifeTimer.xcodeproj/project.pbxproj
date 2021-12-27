@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA08982927758F5700EF81D6 /* LifeActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08982827758F5700EF81D6 /* LifeActivity.swift */; };
 		FAA0F18E275C1BC3006F8179 /* LifeTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F18D275C1BC3006F8179 /* LifeTimerTests.swift */; };
 		FAA0F1B4275C1CC6006F8179 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F1A8275C1CC6006F8179 /* PersistenceService.swift */; };
 		FAA0F1B5275C1CC6006F8179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA0F1AB275C1CC6006F8179 /* Assets.xcassets */; };
@@ -24,6 +25,10 @@
 		FAA908A7276EB7AD004FA46A /* LifeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA908A6276EB7AD004FA46A /* LifeLabel.swift */; };
 		FAA908AD276EBB17004FA46A /* FetchedResultsControllerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA908AB276EBB17004FA46A /* FetchedResultsControllerPublisher.swift */; };
 		FAA908AE276EBB17004FA46A /* ContextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA908AC276EBB17004FA46A /* ContextObject.swift */; };
+		FAB174B327769472002C7690 /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB174B127769472002C7690 /* Calendar+Extensions.swift */; };
+		FAB174B427769472002C7690 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB174B227769472002C7690 /* Date+Extensions.swift */; };
+		FAB174B627769484002C7690 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB174B527769484002C7690 /* DateFormatter+Extensions.swift */; };
+		FAB174B92776957E002C7690 /* ActivityProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB174B82776957E002C7690 /* ActivityProcessor.swift */; };
 		FABAC604275C43CB008177A7 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = FABAC603275C43CB008177A7 /* ElegantCalendar */; };
 		FABAC607275C43FC008177A7 /* LabelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC606275C43FC008177A7 /* LabelListView.swift */; };
 		FABAC609275C440B008177A7 /* LabelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAC608275C440B008177A7 /* LabelListViewModel.swift */; };
@@ -47,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA08982827758F5700EF81D6 /* LifeActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeActivity.swift; sourceTree = "<group>"; };
 		FAA0F174275C1BC1006F8179 /* LifeTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA0F189275C1BC3006F8179 /* LifeTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA0F18D275C1BC3006F8179 /* LifeTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTimerTests.swift; sourceTree = "<group>"; };
@@ -65,6 +71,10 @@
 		FAA908A6276EB7AD004FA46A /* LifeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeLabel.swift; sourceTree = "<group>"; };
 		FAA908AB276EBB17004FA46A /* FetchedResultsControllerPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerPublisher.swift; sourceTree = "<group>"; };
 		FAA908AC276EBB17004FA46A /* ContextObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextObject.swift; sourceTree = "<group>"; };
+		FAB174B127769472002C7690 /* Calendar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Calendar+Extensions.swift"; sourceTree = "<group>"; };
+		FAB174B227769472002C7690 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		FAB174B527769484002C7690 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		FAB174B82776957E002C7690 /* ActivityProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProcessor.swift; sourceTree = "<group>"; };
 		FABAC606275C43FC008177A7 /* LabelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListView.swift; sourceTree = "<group>"; };
 		FABAC608275C440B008177A7 /* LabelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListViewModel.swift; sourceTree = "<group>"; };
 		FABAC60A275C47F2008177A7 /* LabelEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelEditView.swift; sourceTree = "<group>"; };
@@ -132,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA0F1A7275C1CC6006F8179 /* Database */,
+				FAB174B727769578002C7690 /* Processor */,
 				FAA0F1BC275C1F0A006F8179 /* Root */,
 			);
 			path = Services;
@@ -149,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA908AA276EBB17004FA46A /* CoreData */,
+				FAB174B027769472002C7690 /* Date */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -194,6 +206,7 @@
 			children = (
 				FAA0F1B2275C1CC6006F8179 /* LifeTimer.xcdatamodeld */,
 				FAA908A6276EB7AD004FA46A /* LifeLabel.swift */,
+				FA08982827758F5700EF81D6 /* LifeActivity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -225,6 +238,24 @@
 				FAA908AC276EBB17004FA46A /* ContextObject.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FAB174B027769472002C7690 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				FAB174B127769472002C7690 /* Calendar+Extensions.swift */,
+				FAB174B227769472002C7690 /* Date+Extensions.swift */,
+				FAB174B527769484002C7690 /* DateFormatter+Extensions.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		FAB174B727769578002C7690 /* Processor */ = {
+			isa = PBXGroup;
+			children = (
+				FAB174B82776957E002C7690 /* ActivityProcessor.swift */,
+			);
+			path = Processor;
 			sourceTree = "<group>";
 		};
 		FABAC605275C43F4008177A7 /* Labels */ = {
@@ -383,11 +414,16 @@
 				FABAC60B275C47F2008177A7 /* LabelEditView.swift in Sources */,
 				FAA0F1B6275C1CC6006F8179 /* LifeTimerApp.swift in Sources */,
 				FABAC61B275C6C80008177A7 /* ActivityViewModel.swift in Sources */,
+				FAB174B327769472002C7690 /* Calendar+Extensions.swift in Sources */,
+				FAB174B427769472002C7690 /* Date+Extensions.swift in Sources */,
+				FA08982927758F5700EF81D6 /* LifeActivity.swift in Sources */,
 				FAA0F1C9275C1FD1006F8179 /* DayViewModel.swift in Sources */,
 				FAA908AE276EBB17004FA46A /* ContextObject.swift in Sources */,
 				FAA0F1B7275C1CC6006F8179 /* ContentView.swift in Sources */,
 				FAA0F1B8275C1CC6006F8179 /* LifeTimer.xcdatamodeld in Sources */,
+				FAB174B627769484002C7690 /* DateFormatter+Extensions.swift in Sources */,
 				FABAC609275C440B008177A7 /* LabelListViewModel.swift in Sources */,
+				FAB174B92776957E002C7690 /* ActivityProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

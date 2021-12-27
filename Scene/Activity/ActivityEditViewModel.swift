@@ -8,6 +8,7 @@
 import Combine
 import CoreData
 import Foundation
+import SwiftUI
 
 final class ActivityEditViewModel: ObservableObject {
     
@@ -15,6 +16,7 @@ final class ActivityEditViewModel: ObservableObject {
     private let context: NSManagedObjectContext
     
     @Published var startTime: Date
+    @Published var endTime: Date?
     @Published var selectedLabel: LifeLabel?
     
     @Published var labels: [LifeLabel] = []
@@ -26,7 +28,9 @@ final class ActivityEditViewModel: ObservableObject {
         self.activity = activity.obj
         self.context = activity.context
         
-        startTime = self.activity.startTime!
+        selectedLabel = self.activity.label
+        startTime = self.activity.startTime
+        endTime = self.activity.endTime
         
         let fetch = LifeLabel.fetch()
         fetch.sortDescriptors = [.init(key: "name", ascending: true)]
@@ -37,6 +41,34 @@ final class ActivityEditViewModel: ObservableObject {
     }
     
 }
+
+// MARK: - Logic
+
+extension ActivityEditViewModel {
+    
+    var finishedBinding: Binding<Bool> {
+        return Binding<Bool> { [unowned self] in
+            return self.endTime != nil
+        } set: { [unowned self] newValue in
+            if newValue {
+                self.endTime = Date()
+            } else {
+                self.endTime = nil
+            }
+        }
+    }
+    
+    var endTimeBinding: Binding<Date> {
+        return Binding<Date> { [unowned self] in
+            return self.endTime ?? Date()
+        } set: { [unowned self] newValue in
+            self.endTime = newValue
+        }
+    }
+    
+}
+
+// MARK: - Behaviors
 
 extension ActivityEditViewModel {
     

@@ -25,6 +25,14 @@ extension ActivityEditView: View {
             VStack {
                 DatePicker("Start time", selection: $viewModel.startTime, displayedComponents: [.date, .hourAndMinute])
                 
+                Toggle(isOn: viewModel.finishedBinding) {
+                    Text("Finished")
+                }
+                
+                if viewModel.finishedBinding.wrappedValue {
+                    DatePicker("End time", selection: viewModel.endTimeBinding, displayedComponents: [.date, .hourAndMinute])
+                }
+                
                 picker
                 
                 saveButton

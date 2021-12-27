@@ -24,12 +24,12 @@ extension ActivityView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                DayView(viewModel: factory.resolve())
+                DayView(viewModel: factory.resolve(DayViewModel.self, argument: viewModel.onActivitySelection))
                 controls
                 navigation
             }
+            .navigationTitle(viewModel.title)
         }
-        
     }
     
     private var controls: some View {
@@ -37,6 +37,12 @@ extension ActivityView: View {
             Spacer()
             HStack {
                 Spacer()
+                
+                Button(action: viewModel.stopActivity) {
+                    Image(systemName: "stop.circle.fill")
+                        .frame(width: 44, height: 44)
+                }
+                
                 Button(action: viewModel.addActivity) {
                     Image(systemName: "plus.circle")
                         .frame(width: 44, height: 44)

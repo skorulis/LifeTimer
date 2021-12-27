@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="LifeActivity" representedClassName="LifeActivity" syncable="YES" codeGenerationType="class">
+    <entity name="LifeActivity" representedClassName="LifeActivity" syncable="YES">
         <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="startTime" attributeType="Date" defaultDateTimeInterval="660348900" usesScalarValueType="NO"/>
         <relationship name="label" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LifeLabel" inverseName="activities" inverseEntity="LifeLabel"/>
